@@ -65,6 +65,7 @@ func main() {
 	apiv1.Get("/user", userHandler.HandleGetUsers)
 
 	// hotel handlers
+	// http://localhost:3333/api/v1/hotel?page=1&limit=10&rating=3
 	apiv1.Get("/hotel", hotelHandler.HandleGetHotels)
 	apiv1.Get("/hotel/:id", hotelHandler.HandleGetHotel)
 	apiv1.Get("/hotel/:id/rooms", hotelHandler.HandleGetRooms)

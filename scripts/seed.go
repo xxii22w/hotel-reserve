@@ -42,8 +42,6 @@ func main() {
 
 	user := fixtures.AddUser(store, "james", "foo", false)
 	fmt.Println("james ->", api.CreateTokenFromUser(user))
-	user2 := fixtures.AddUser(store, "hao", "hao", false)
-	fmt.Println("hao ->", api.CreateTokenFromUser(user2))
 
 	admin := fixtures.AddUser(store, "admin", "admin", true)
 	fmt.Println("admin ->", api.CreateTokenFromUser(admin))
@@ -55,6 +53,8 @@ func main() {
 	for i := 0; i < 100; i++ {
 		name := fmt.Sprintf("ramdom hotel name %d", i)
 		location := fmt.Sprintf("location %d", i)
-		fixtures.AddHotel(store, name, location, rand.IntN(5)+1, nil)
+		roomSize := fmt.Sprintf("ramdom room Size %d",i)
+		hotel := fixtures.AddHotel(store, name, location, rand.IntN(5)+1, nil)
+		fixtures.AddRoom(store,roomSize,true,float64(rand.IntN(100)+1),hotel.ID)
 	}
 }

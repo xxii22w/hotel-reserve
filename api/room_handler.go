@@ -13,6 +13,9 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
+// "fromDate": "2024-04-20T00:00:00.0Z",
+// "tillDate": "2024-04-22T00:00:00.0Z",
+// "numPersons": 2
 type BookRoomParams struct {
 	FromDate   time.Time `json:"fromDate"`
 	TillDate   time.Time `json:"tillDate"`
